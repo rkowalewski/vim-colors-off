@@ -200,6 +200,8 @@ call s:h("htmlH4",        {"bg": s:bg, "fg": s:norm})
 call s:h("htmlH5",        {"bg": s:bg, "fg": s:norm})
 call s:h("htmlH6",        {"bg": s:bg, "fg": s:norm})
 
+hi link clojureRegexp               String
+
 " Signify, git-gutter
 hi link SignifySignAdd              LineNr
 hi link SignifySignDelete           LineNr
