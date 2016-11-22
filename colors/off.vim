@@ -17,7 +17,8 @@ endif
 
 let g:colors_name='off'
 
-let s:black             = { "gui": "#1c1c1c", "cterm": "234"   }
+let s:actual_black      = { "gui": "#000000", "cterm": "0"   }
+let s:black             = { "gui": "#1c1c1c", "cterm": "234" }
 let s:very_subtle_black = { "gui": "#262626", "cterm": "235" }
 let s:subtle_black      = { "gui": "#303030", "cterm": "236" }
 let s:light_black       = { "gui": "#424242", "cterm": "8"   }
@@ -59,7 +60,7 @@ if &background == "dark"
   let s:bg_most_subtle  = s:very_subtle_black
   let s:norm            = s:white
   let s:norm_subtle     = s:light_gray
-  let s:norm_heavy      = s:lightest_gray
+  let s:norm_heavy      = s:actual_white
   let s:purple          = s:light_purple
   let s:cyan            = s:light_cyan
   let s:green           = s:light_green
@@ -104,12 +105,11 @@ hi! link Character        Constant
 hi! link Number           Constant
 hi! link Boolean          Constant
 hi! link Float            Constant
-"hi! link String           Constant
 
-hi! link Identifier       Normal
+call s:h("Identifier",    {"fg": s:norm_heavy, "gui": "bold"})
 hi! link Function         Identifier
 
-hi! link Statement        Normal
+call s:h("Statement",     {"fg": s:norm_heavy, "gui": "bold"})
 hi! link Conditonal       Statement
 hi! link Repeat           Statement
 hi! link Label            Statement
@@ -123,12 +123,12 @@ hi! link Define           PreProc
 hi! link Macro            PreProc
 hi! link PreCondit        PreProc
 
-hi! link Type             Normal
+call s:h("Type",          {"fg": s:norm_heavy, "gui": "bold"})
 hi! link StorageClass     Type
 hi! link Structure        Type
 hi! link Typedef          Type
 
-hi! link Special          Normal
+call s:h("Special",       {"fg": s:norm_heavy, "gui": "bold"})
 hi! link SpecialChar      Special
 hi! link Tag              Special
 hi! link Delimiter        Special
@@ -201,6 +201,13 @@ call s:h("htmlH5",        {"bg": s:bg, "fg": s:norm})
 call s:h("htmlH6",        {"bg": s:bg, "fg": s:norm})
 
 hi link clojureRegexp               String
+
+hi link diffRemoved                 DiffDelete
+hi link diffAdded                   DiffAdd
+hi link diffLine                    Comment
+hi link diffIndexLine               Comment
+call s:h("gitCommitDiff",           {"fg": s:norm_subtle})
+call s:h("diffSubName",             {"fg": s:norm, "gui":"bold","cterm":"bold"})
 
 " Signify, git-gutter
 hi link SignifySignAdd              LineNr
