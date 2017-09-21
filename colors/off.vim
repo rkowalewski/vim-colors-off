@@ -123,12 +123,12 @@ hi! link Define           PreProc
 hi! link Macro            PreProc
 hi! link PreCondit        PreProc
 
-call s:h("Type",          {"fg": s:norm_heavy, "gui": "bold"})
+call s:h("Type",          {"fg": s:norm_heavy, "gui": "bold", "cterm": "bold"})
 hi! link StorageClass     Type
 hi! link Structure        Type
 hi! link Typedef          Type
 
-call s:h("Special",       {"fg": s:norm_heavy, "gui": "bold"})
+call s:h("Special",       {"fg": s:norm_heavy, "gui": "bold", "cterm": "bold"})
 hi! link SpecialChar      Special
 hi! link Tag              Special
 hi! link Delimiter        Special
@@ -208,6 +208,20 @@ hi link diffLine                    Comment
 hi link diffIndexLine               Comment
 call s:h("gitCommitDiff",           {"fg": s:norm_subtle})
 call s:h("diffSubName",             {"fg": s:norm, "gui":"bold","cterm":"bold"})
+
+call s:h("markdownH1",              {"fg": s:norm_heavy, "gui": "bold", "cterm": "bold"})
+hi link markdownH2                  markdownH1
+hi link markdownH3                  markdownH1
+hi link markdownH4                  markdownH1
+hi link markdownHeadingDelimiter    markdownH1
+hi link markdownBold                markdownH1
+call s:h("markdownItalic",          {"gui": "italic", "cterm": "italic"})
+call s:h("markdownCode",            {"fg": s:bg_subtle})
+call s:h("markdownCodeDelimiter",   {"fg": s:norm_heavy, "gui": "bold"})
+hi link markdownLinkTextDelimiter   markdownCodeDelimiter
+hi link markdownLinkDelimiter       markdownCodeDelimiter
+call s:h("markdownLinkText",        {"fg": s:norm_heavy, "gui": "underline,bold", "cterm": "underline,bold"})
+call s:h("markdownUrl",             {"fg": s:norm_subtle, "gui": "italic", "cterm": "italic"})
 
 " Signify, git-gutter
 hi link SignifySignAdd              LineNr
