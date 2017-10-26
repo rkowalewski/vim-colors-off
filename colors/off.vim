@@ -18,7 +18,7 @@ endif
 let g:colors_name='off'
 
 let s:actual_black      = { "gui": "#000000", "cterm": "0"   }
-let s:black             = { "gui": "#1c1c1c", "cterm": "234" }
+let s:black             = { "gui": "#323232", "cterm": "234" }
 let s:very_subtle_black = { "gui": "#262626", "cterm": "235" }
 let s:subtle_black      = { "gui": "#303030", "cterm": "236" }
 " let s:light_black       = { "gui": "#424242", "cterm": "8"   }
@@ -107,7 +107,7 @@ hi! link Number           Constant
 hi! link Boolean          Constant
 hi! link Float            Constant
 
-call s:h("Identifier",    {"fg": s:norm_heavy, "gui": "bold"})
+call s:h("Identifier",    {"fg": s:norm_heavy})
 hi! link Function         Identifier
 
 call s:h("Statement",     {"fg": s:norm_heavy, "gui": "bold"})
@@ -130,7 +130,7 @@ hi! link Structure        Type
 hi! link Typedef          Type
 
 call s:h("Special",       {"fg": s:norm_heavy, "gui": "bold", "cterm": "bold"})
-hi! link SpecialChar      Special
+hi! lin SpecialChar      Special
 hi! link Tag              Special
 hi! link Delimiter        Special
 hi! link SpecialComment   Special
