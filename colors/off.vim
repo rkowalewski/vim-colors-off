@@ -18,7 +18,7 @@ endif
 let g:colors_name='off'
 
 let s:actual_black      = { "gui": "#000000", "cterm": "0"   }
-let s:black             = { "gui": "#323232", "cterm": "234" }
+let s:black             = { "gui": "#303030", "cterm": "234" }
 let s:very_subtle_black = { "gui": "#262626", "cterm": "235" }
 let s:subtle_black      = { "gui": "#303030", "cterm": "236" }
 " let s:light_black       = { "gui": "#424242", "cterm": "8"   }
